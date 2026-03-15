@@ -1,4 +1,4 @@
-# Atul Sahu | Portfolio 🚀
+# Atul Sahu | Portfolio 
 
 Full Stack Developer specializing in React, Next.js, and AI-powered applications.
 
