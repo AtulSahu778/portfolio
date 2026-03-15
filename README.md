@@ -1,16 +1,44 @@
-# My Portfolio Wesbite - Overview 🚀
+# Atul Sahu | Portfolio 🚀
 
-This repository contains the open source version of my porfolio website.
-Do check it out!
+Full Stack Developer specializing in React, Next.js, and AI-powered applications.
 
-## Instructions 🛠️
+## About Me 🧑‍💻
+I build end-to-end products — from backend architecture to polished user interfaces — ensuring both performance and usability. I am currently pursuing a B.Sc. in Information Technology at St. Xavier's College, Ranchi.
 
-I have modified the gsap club plugins with the trial plugins, but with the trial plugin you cannot host it🔴. So for Club plugins, Check out here: https://gsap.com/docs/v3/Installation/
+## Tech Stack 🛠️
+- **Frontend**: React, Next.js, React Native (Expo), TypeScript, GSAP
+- **Backend**: Node.js, Express, PostgreSQL, REST APIs
+- **Design & 3D**: Three.js, WebGL, Tailwind CSS, Vanilla CSS
+- **Tools**: Git, GitHub, AI API Integration
 
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
+## Key Projects 📁
+- **DescriptAI**: AI-powered product description generator.
+- **SXC-ScholarHub**: Academic resource hub for students.
+- **AttendEase**: Student attendance tracking mobile app.
+- **UrbanCart**: Full-stack e-commerce application.
 
-![Portfolio-Preview](public/images/preview.png)
+## Development 💻
+This project uses GSAP Trial plugins. Note that for production hosting without watermark/limitations, you would need GSAP Club plugins.
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Contact 📬
+- **Email**: [sahuatul2005@gmail.com](mailto:sahuatul2005@gmail.com)
+- **LinkedIn**: [Atul Sahu](https://linkedin.com/in/atulsahu)
+- **Twitter/X**: [@Ofc_atul](https://x.com/Ofc_atul)
+- **GitHub**: [AtulSahu778](https://github.com/AtulSahu778)
 
 ## License
+MIT License - see [LICENSE](LICENSE) for details.
 
-This project is open source and available under the [MIT License](LICENSE).
+---
+Designed and Developed by Atul Sahu.
