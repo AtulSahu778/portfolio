@@ -18,7 +18,7 @@ I build end-to-end products — from backend architecture to polished user inter
 - **UrbanCart**: Full-stack e-commerce application.
 
 ## Development 💻
-This project uses GSAP Trial plugins. Note that for production hosting without watermark/limitations, you would need GSAP Club plugins.
+This project utilizes the standard **GSAP** package. Since April 2025, GSAP's premium plugins (ScrollSmoother, SplitText, etc.) have been made free for all users, and this portfolio takes full advantage of them for smooth scrolling and complex animations.
 
 ```bash
 # Install dependencies
