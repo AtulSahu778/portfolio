@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SiGmail } from "react-icons/si";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
@@ -50,7 +51,7 @@ const Navbar = () => {
           className="navbar-connect"
           data-cursor="disable"
         >
-          sahuatul2005@gmail.com
+          <SiGmail />
         </a>
         <ul>
           <li>

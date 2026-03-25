@@ -1,4 +1,5 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { SiGmail } from "react-icons/si";
 import "./styles/Contact.css";
 
 const Contact = () => {
@@ -11,7 +12,7 @@ const Contact = () => {
             <h4>Email</h4>
             <p>
               <a href="mailto:sahuatul2005@gmail.com" data-cursor="disable">
-                sahuatul2005@gmail.com
+                <SiGmail size={20} />
               </a>
             </p>
             <h4>Location</h4>
