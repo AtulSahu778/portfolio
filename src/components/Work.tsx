@@ -2,43 +2,62 @@ import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
     title: "DescriptAI",
     category: "Web development",
-    tools: "Next.js, Supabase, AI, Tailwind, React, JavaScript",
+    description: "AI-powered product description generator. Feed it a product name, category, and a few keywords — get back three publish-ready descriptions in seconds.",
+    tools: "Next.js, Supabase, AI, Tailwind, React",
     image: "/images/descriptai.png",
-  },
-  {
-    title: "SXC-ScholarHub",
-    category: "Web development",
-    tools: "HTML, CSS, JavaScript, Tailwind, Responsive",
-    image: "/images/scholarhub.png",
-  },
-  {
-    title: "PentaFrames",
-    category: "Web development",
-    tools: "HTML, CSS, JavaScript, Responsive",
-    image: "/images/pentaframes.png",
+    url: "https://descript-ai.vercel.app",
+    github: "https://github.com/AtulSahu778/DescriptAI",
   },
   {
     title: "AttendEase",
     category: "Applications",
-    tools: "React Native, Expo, Android App, Mobile Development",
-    image: "/images/attendease.png",
+    description: "A streamlined Android application built with React Native and Expo for managing and tracking student attendance with an intuitive mobile interface.",
+    tools: "React Native, Expo, Android App",
+    image: "/images/attendease-v2.png",
+    url: "https://attendeaseapp.vercel.app",
+    github: "https://github.com/AtulSahu778/attendanceEase",
+  },
+  {
+    title: "SXC-ScholarHub",
+    category: "Web development",
+    description: "Academic resource hub for St. Xavier's College students. Centralized platform for notes, papers, and assignments with smart search and personalized dashboards.",
+    tools: "HTML, CSS, JavaScript, Tailwind, Responsive",
+    image: "/images/scholarhub.png",
+    url: "https://sxchub.vercel.app",
+    github: "https://github.com/AtulSahu778/",
+  },
+  {
+    title: "PentaFrames",
+    category: "Web development",
+    description: "A creative multi-frame web experience showcasing dynamic layouts and smooth visual transitions.",
+    tools: "HTML, CSS, JavaScript, Responsive",
+    image: "/images/pentaframes.png",
+    url: "https://pentaframes.vercel.app/",
+    github: "#",
+  },
+  {
+    title: "Portfolio",
+    category: "Web development",
+    description: "My personal portfolio website built with React, Tailwind CSS, showcasing my projects and skills with a modern design.",
+    tools: "React, Tailwind, Responsive",
+    image: "/images/preview.png",
+    url: "https://atulworks.vercel.app/",
+    github: "https://github.com/AtulSahu778/portfolio",
   },
   {
     title: "Apple Clone",
     category: "Web development",
+    description: "Pixel-perfect recreation of Apple's website. Smooth animations, clean design, and responsive across all devices.",
     tools: "HTML, CSS, JavaScript, Tailwind, Responsive",
     image: "/images/apple1.png",
-  },
-  {
-    title: "UrbanCart-Ecommerce",
-    category: "Web development",
-    tools: "React, Express.js, TypeScript, SQLite, Tailwind",
-    image: "/images/urbancart.png",
+    url: "https://applebyatul.vercel.app/",
+    github: "https://github.com/AtulSahu778/apple-clone",
   },
 ];
 
@@ -114,9 +133,24 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
+                        <p className="carousel-description">
+                          {project.description}
+                        </p>
                         <div className="carousel-tools">
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>
+                        </div>
+                        <div className="carousel-links">
+                          {project.url && project.url !== '#' && (
+                            <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-link" data-cursor="hover">
+                              <FaExternalLinkAlt /> Live Site
+                            </a>
+                          )}
+                          {project.github && project.github !== '#' && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link" data-cursor="hover">
+                              <FaGithub /> GitHub
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>

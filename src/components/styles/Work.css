@@ -88,8 +88,46 @@
   font-size: 16px;
 }
 
+.carousel-description {
+  font-weight: 300;
+  color: #cfcfcf;
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 .carousel-tools {
   margin-top: 16px;
+}
+
+.carousel-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #eae5ec;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.project-link:hover {
+  background: rgba(94, 234, 212, 0.1);
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(94, 234, 212, 0.15);
 }
 
 .carousel-tools .tools-label {
