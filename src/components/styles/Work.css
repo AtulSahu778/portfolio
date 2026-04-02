@@ -13,7 +13,7 @@
   margin-bottom: 50px;
 }
 
-.work-section h2>span {
+.work-section h2 > span {
   color: var(--accentColor);
 }
 
@@ -25,22 +25,28 @@
 .carousel-wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
+/* The scrollable strip */
 .carousel-track-container {
   overflow: hidden;
   width: 100%;
   border-top: 1px solid #363636;
   border-bottom: 1px solid #363636;
+  position: relative; /* arrows anchor here */
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .carousel-slide {
+  width: 100%;          /* explicit width – flex children sometimes collapse */
   min-width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -104,6 +110,7 @@
   display: flex;
   gap: 15px;
   margin-top: 25px;
+  flex-wrap: wrap;
 }
 
 .project-link {
@@ -152,25 +159,26 @@
   align-items: center;
 }
 
-/* ── Navigation Arrows ── */
+/* ── Navigation Arrows – anchored to the TRACK container ── */
 .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #eae5ec;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+  transition: background 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .carousel-arrow:hover {
@@ -180,45 +188,48 @@
   box-shadow: 0 0 20px rgba(94, 234, 212, 0.15);
 }
 
+/* Sit just INSIDE the track edges so they never overflow the page */
 .carousel-arrow-left {
-  left: -70px;
+  left: 16px;
 }
 
 .carousel-arrow-right {
-  right: -70px;
+  right: 16px;
 }
 
 /* ── Dot Indicators ── */
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 35px;
+  align-items: center;
+  gap: 10px;
 }
 
 .carousel-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: transparent;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: width 0.35s ease, background 0.3s ease, box-shadow 0.3s ease;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .carousel-dot:hover {
-  border-color: var(--accentColor);
-  background: rgba(94, 234, 212, 0.2);
+  background: rgba(94, 234, 212, 0.5);
 }
 
+/* Active dot expands into a pill */
 .carousel-dot-active {
+  width: 28px;
+  border-radius: 4px;
   background: var(--accentColor);
-  border-color: var(--accentColor);
-  box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
+  box-shadow: 0 0 8px rgba(94, 234, 212, 0.45);
 }
 
-/* ── Work Image (reused) ── */
+/* ── Work Image ── */
 .work-image {
   display: flex;
   width: 100%;
@@ -272,16 +283,6 @@
 }
 
 /* ── Responsive ── */
-@media only screen and (max-width: 1600px) {
-  .carousel-arrow-left {
-    left: -60px;
-  }
-
-  .carousel-arrow-right {
-    right: -60px;
-  }
-}
-
 @media only screen and (max-width: 1400px) {
   .work-section h2 {
     font-size: 50px;
@@ -297,14 +298,6 @@
 
   .carousel-content {
     gap: 40px;
-  }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
   }
 }
 
@@ -323,9 +316,9 @@
   }
 
   .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
   }
 
   .carousel-arrow-left {
@@ -365,5 +358,143 @@
 
   .work-image img {
     max-height: 250px;
+  }
+
+  /* Hide arrows on small screens — swipe handles navigation */
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+/* ── Phone (≤ 600px) ── */
+@media only screen and (max-width: 600px) {
+  .work-section {
+    padding: 40px 0;
+  }
+
+  .work-section h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .carousel-slide {
+    padding: 28px 0;
+  }
+
+  .carousel-content {
+    gap: 18px;
+  }
+
+  /* Put number inline with the title instead of a big side column */
+  .carousel-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-number h3 {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.45;
+    letter-spacing: 2px;
+    /* Show as a horizontal label like "01 ──" */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .carousel-number h3::after {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.4;
+  }
+
+  .carousel-details {
+    gap: 6px;
+  }
+
+  .carousel-details h4 {
+    font-size: 22px;
+  }
+
+  .carousel-category {
+    font-size: 13px;
+  }
+
+  .carousel-description {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 6px;
+  }
+
+  .carousel-tools {
+    margin-top: 12px;
+  }
+
+  .carousel-tools .tools-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .carousel-tools p {
+    font-size: 13px;
+  }
+
+  .carousel-links {
+    margin-top: 18px;
+    gap: 10px;
+  }
+
+  .project-link {
+    padding: 9px 16px;
+    font-size: 13px;
+    border-radius: 7px;
+  }
+
+  .work-image img {
+    max-height: 200px;
+    border-radius: 10px;
+  }
+
+  /* Bigger tap targets for dots */
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+    /* invisible padding enlarges tap area without changing visual size */
+    padding: 6px;
+    background-clip: content-box;
+    border-radius: 50%;
+  }
+
+  .carousel-dot-active {
+    width: 24px;
+    border-radius: 4px;
+    background-clip: content-box;
+  }
+
+  .carousel-dots {
+    gap: 2px;
+    margin-top: 4px;
+  }
+}
+
+/* ── Very small phones (≤ 400px) ── */
+@media only screen and (max-width: 400px) {
+  .work-section h2 {
+    font-size: 28px;
+  }
+
+  .carousel-details h4 {
+    font-size: 20px;
+  }
+
+  .carousel-slide {
+    padding: 22px 0;
+  }
+
+  .work-image img {
+    max-height: 170px;
   }
 }
